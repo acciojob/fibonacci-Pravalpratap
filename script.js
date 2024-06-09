@@ -1,22 +1,19 @@
 function fibonacci(num) {
-  if (num === 1) {
-    return 0;  // The first number in the Fibonacci sequence is 0
-  }
-  if (num === 2) {
-    return 1;  // The second number in the Fibonacci sequence is 1
-  }
+  let a = 0, b = 1;
+  
+    if (num === 1) {
+      return a;
+    } else if (num === 2) {
+      return b;
+    }
 
-  let a = 0;  // First number in the sequence
-  let b = 1;  // Second number in the sequence
-  let fib = 0;
+    for (let i = 3; i <= num; i++) {
+      let temp = a + b;
+      a = b;
+      b = temp;
+    }
 
-  for (let i = 3; i <= num; i++) {
-    fib = a + b;  // Sum of the two preceding numbers
-    a = b;  // Update the first preceding number
-    b = fib;  // Update the second preceding number
-  }
-
-  return b;  // The numth Fibonacci number
+    return b;
 }
 
 function showFibonacci() {
